@@ -1,5 +1,5 @@
 """DNS Authenticator for DNSimple DNS."""
-import logging
+import logging, sys, traceback
 
 import zope.interface
 from lexicon.providers import dnsimple
@@ -48,6 +48,9 @@ class Authenticator(dns_common.DNSAuthenticator):
         )
 
     def _perform(self, domain, validation_name, validation):
+        print '================ _perform ================'
+        print domain + ' ' + validation_name + ' ' + validation
+        traceback.print_stack()
         self._get_dnsimple_client().add_txt_record(domain, validation_name, validation)
 
     def _cleanup(self, domain, validation_name, validation):
