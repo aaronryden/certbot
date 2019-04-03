@@ -51,6 +51,7 @@ class Authenticator(dns_common.DNSAuthenticator):
         print '================ _perform ================'
         print domain + ' ' + validation_name + ' ' + validation
         traceback.print_stack()
+        print self._get_dnsimple_client()
         self._get_dnsimple_client().add_txt_record(domain, validation_name, validation)
 
     def _cleanup(self, domain, validation_name, validation):
