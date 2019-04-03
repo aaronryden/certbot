@@ -9,7 +9,7 @@ version = '0.33.0.dev0'
 install_requires = [
     'acme>=0.31.0',
     'certbot>=0.31.0',
-    'dns-lexicon>=3.1.7',  # Support for >1 TXT record per name
+    'dns-lexicon @ git+https://github.com/aaronryden/lexicon',
     'mock',
     'setuptools',
     'zope.interface',
