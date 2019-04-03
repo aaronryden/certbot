@@ -8,4 +8,5 @@
 # expected and "pip install -e .[docs]" must be used instead
 
 -e acme
--e .[docs]
+-e .
+-e certbot-dns-dnsimple[docs]
